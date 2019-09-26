@@ -16,6 +16,7 @@
 		39987CCC233CF73A00A7C579 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987CCB233CF73A00A7C579 /* ExtensionDelegate.swift */; };
 		39987CCE233CF73A00A7C579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39987CCD233CF73A00A7C579 /* Assets.xcassets */; };
 		39987CD1233CF73A00A7C579 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39987CD0233CF73A00A7C579 /* Preview Assets.xcassets */; };
+		39987CE1233D1A6C00A7C579 /* DicePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987CE0233D1A6C00A7C579 /* DicePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		39987CCD233CF73A00A7C579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39987CD0233CF73A00A7C579 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		39987CD2233CF73A00A7C579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39987CE0233D1A6C00A7C579 /* DicePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				39987CC7233CF73A00A7C579 /* RollView.swift */,
+				39987CE0233D1A6C00A7C579 /* DicePickerView.swift */,
 				39987CC9233CF73A00A7C579 /* HostingController.swift */,
 				39987CCB233CF73A00A7C579 /* ExtensionDelegate.swift */,
 				39987CCD233CF73A00A7C579 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39987CCA233CF73A00A7C579 /* HostingController.swift in Sources */,
+				39987CE1233D1A6C00A7C579 /* DicePickerView.swift in Sources */,
 				39987CC8233CF73A00A7C579 /* RollView.swift in Sources */,
 				39987CCC233CF73A00A7C579 /* ExtensionDelegate.swift in Sources */,
 			);
