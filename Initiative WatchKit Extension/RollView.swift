@@ -31,6 +31,7 @@ struct RollView: View {
                 let max = diceCount * diceEyes
                 if rollResult == max {
                     self.result += " 💥"
+                    WKInterfaceDevice.current().play(.success)
                 }
             }, label: {
                 HStack {
