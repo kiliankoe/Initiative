@@ -17,7 +17,21 @@ struct RollView: View {
             DicePickerView()
 
             Button(action: {
-                self.result = "20"
+                // FIXME
+                let diceCount = 1
+                let diceEyes = 20
+
+                var rollResult = 0
+                for _ in (1...diceCount) {
+                    rollResult += Int.random(in: 1...diceEyes)
+                }
+
+                self.result = String(rollResult)
+
+                let max = diceCount * diceEyes
+                if rollResult == max {
+                    self.result += " 💥"
+                }
             }, label: {
                 HStack {
                     Image(systemName: "arrow.2.circlepath")
