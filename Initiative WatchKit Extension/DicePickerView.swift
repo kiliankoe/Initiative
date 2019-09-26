@@ -6,14 +6,14 @@ struct DicePickerView: View {
 
     var body: some View {
         HStack {
-            Picker(selection: $diceCount, label: Text("")) {
+            Picker("", selection: $diceCount) {
                 ForEach(1..<21) { val in
                     Text(String(val)).tag(val)
                 }
             }
             Text("d")
                 .font(.system(.title, design: .rounded))
-            Picker(selection: $eyeCount, label: Text("")) {
+            Picker("", selection: $eyeCount) {
                 Text("1").tag(1)
                 Text("4").tag(4)
                 Text("6").tag(6)
