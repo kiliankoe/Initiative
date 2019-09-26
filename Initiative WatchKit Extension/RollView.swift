@@ -34,7 +34,7 @@ struct RollView: View {
                 Text("d")
                     .font(.system(.title, design: .rounded))
                 Picker("", selection: $eyeCount) {
-                    Text("1").tag(1)
+                    Text("2").tag(2)
                     Text("4").tag(4)
                     Text("6").tag(6)
                     Text("8").tag(8)
