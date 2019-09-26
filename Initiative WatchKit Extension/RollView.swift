@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RollView: View {
-    @State var diceCount = 0
+    @State var diceCount = 1
     @State var eyeCount = 20
 
     @State var isCrit = false
@@ -20,9 +20,16 @@ struct RollView: View {
 
             HStack {
                 Picker("", selection: $diceCount) {
-                    ForEach(1..<21) { val in
-                        Text(String(val)).tag(val)
-                    }
+                    Text("1").tag(1)
+                    Text("2").tag(2)
+                    Text("3").tag(3)
+                    Text("4").tag(4)
+                    Text("5").tag(5)
+                    Text("6").tag(6)
+                    Text("7").tag(7)
+                    Text("8").tag(8)
+                    Text("9").tag(9)
+                    Text("10").tag(10)
                 }
                 Text("d")
                     .font(.system(.title, design: .rounded))
@@ -40,7 +47,7 @@ struct RollView: View {
 
             Button(action: {
                 var rollResult = 0
-                for _ in (0..<self.diceCount) {
+                for _ in (1...self.diceCount) {
                     rollResult += Int.random(in: 1...self.eyeCount)
                 }
 
