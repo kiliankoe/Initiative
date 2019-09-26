@@ -9,6 +9,7 @@ struct RollView: View {
 
     var body: some View {
         VStack {
+            // MARK: Title
             HStack {
                 Image("d20")
                     .resizable()
@@ -18,6 +19,7 @@ struct RollView: View {
                 Spacer()
             }
 
+            // MARK: Dice Picker
             HStack {
                 Picker("", selection: $diceCount) {
                     Text("1").tag(1)
@@ -45,6 +47,7 @@ struct RollView: View {
                 }
             }
 
+            // MARK: Roll Button
             Button(action: {
                 var rollResult = 0
                 for _ in (1...self.diceCount) {
