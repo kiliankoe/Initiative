@@ -1,11 +1,13 @@
 import SwiftUI
 
 struct RollView: View {
-    @State var diceCount = 1
-    @State var eyeCount = 20
+    @State var selectedDiceCount = 1
+    @State var selectedDie = 20
 
     @State var isCrit = false
     @State var result = "Roll!"
+
+    let dice = [2, 4, 6, 8, 12, 20, 100]
 
     var body: some View {
         VStack {
@@ -21,42 +23,30 @@ struct RollView: View {
 
             // MARK: Dice Picker
             HStack {
-                Picker("", selection: $diceCount) {
-                    Text("1").tag(1)
-                    Text("2").tag(2)
-                    Text("3").tag(3)
-                    Text("4").tag(4)
-                    Text("5").tag(5)
-                    Text("6").tag(6)
-                    Text("7").tag(7)
-                    Text("8").tag(8)
-                    Text("9").tag(9)
-                    Text("10").tag(10)
+                Picker("", selection: $selectedDiceCount) {
+                    ForEach(1...20, id: \.self) { count in
+                        Text(String(count)).tag(count)
+                    }
                 }
                 Text("d")
                     .font(.system(.title, design: .rounded))
-                Picker("", selection: $eyeCount) {
-                    Text("2").tag(2)
-                    Text("4").tag(4)
-                    Text("6").tag(6)
-                    Text("8").tag(8)
-                    Text("10").tag(10)
-                    Text("12").tag(12)
-                    Text("20").tag(20)
-                    Text("100").tag(100)
+                Picker("", selection: $selectedDie) {
+                    ForEach(dice, id: \.self) { die in
+                        Text(String(die)).tag(die)
+                    }
                 }
             }
 
             // MARK: Roll Button
             Button(action: {
                 var rollResult = 0
-                for _ in (1...self.diceCount) {
-                    rollResult += Int.random(in: 1...self.eyeCount)
+                for _ in (1...self.selectedDiceCount) {
+                    rollResult += Int.random(in: 1...self.selectedDie)
                 }
 
                 self.result = String(rollResult)
 
-                let max = self.diceCount * self.eyeCount
+                let max = self.selectedDiceCount * self.selectedDie
                 if rollResult == max {
                     self.isCrit = true
                     WKInterfaceDevice.current().play(.success)
