@@ -3,8 +3,9 @@ import SwiftUI
 struct RollButton: View {
     @Binding var selectedDiceCount: Int
     @Binding var selectedDie: Int
-    @Binding var isCrit: Bool
-    @Binding var result: String
+
+    @State var isCrit = false
+    @State var result = "Roll!"
 
     var body: some View {
         Button(action: {

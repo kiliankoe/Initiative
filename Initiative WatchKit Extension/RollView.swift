@@ -4,9 +4,6 @@ struct RollView: View {
     @State var selectedDiceCount = 1
     @State var selectedDie = 20
 
-    @State var isCrit = false
-    @State var result = "Roll!"
-
     var body: some View {
         VStack {
             // MARK: Title
@@ -23,9 +20,7 @@ struct RollView: View {
                        selectedDie: $selectedDie)
 
             RollButton(selectedDiceCount: $selectedDiceCount,
-                       selectedDie: $selectedDie,
-                       isCrit: $isCrit,
-                       result: $result)
+                       selectedDie: $selectedDie)
         }
     }
 }
