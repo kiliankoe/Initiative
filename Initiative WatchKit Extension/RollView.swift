@@ -6,7 +6,6 @@ struct RollView: View {
 
     var body: some View {
         VStack {
-            // MARK: Title
             HStack {
                 Image("d20")
                     .resizable()
