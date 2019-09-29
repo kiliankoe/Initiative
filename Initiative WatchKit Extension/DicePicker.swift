@@ -26,7 +26,10 @@ struct DicePicker: View {
 
 struct DicePicker_Previews: PreviewProvider {
     static var previews: some View {
-        Text("")
-//        DicePicker()
+        VStack {
+            Spacer()
+            DicePicker(selectedDiceCount: .constant(1), selectedDie: .constant(20))
+            Spacer()
+        }
     }
 }

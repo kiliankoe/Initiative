@@ -38,7 +38,9 @@ struct RollButton: View {
 
 struct RollButton_Previews: PreviewProvider {
     static var previews: some View {
-        Text("")
-//        RollButton()
+        Group {
+            RollButton(selectedDiceCount: .constant(1), selectedDie: .constant(20))
+            RollButton(selectedDiceCount: .constant(1), selectedDie: .constant(20), isCrit: true, result: "20")
+        }
     }
 }
