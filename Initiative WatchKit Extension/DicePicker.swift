@@ -5,19 +5,19 @@ struct DicePicker: View {
     @Binding var selectedDie: Int
 
     let dice = [2, 4, 6, 8, 12, 20, 100]
-    
+
     var body: some View {
         HStack {
             Picker("", selection: $selectedDiceCount) {
                 ForEach(1...20, id: \.self) { count in
-                    Text(String(count)).tag(count)
+                    Text(String(count))
                 }
             }
             Text("d")
                 .font(.system(.title, design: .rounded))
             Picker("", selection: $selectedDie) {
                 ForEach(dice, id: \.self) { die in
-                    Text(String(die)).tag(die)
+                    Text(String(die))
                 }
             }
         }
@@ -26,10 +26,8 @@ struct DicePicker: View {
 
 struct DicePicker_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
-            Spacer()
-            DicePicker(selectedDiceCount: .constant(1), selectedDie: .constant(20))
-            Spacer()
-        }
+        DicePicker(
+            selectedDiceCount: .constant(1),
+            selectedDie: .constant(20))
     }
 }
