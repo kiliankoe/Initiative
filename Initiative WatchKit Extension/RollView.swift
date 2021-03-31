@@ -15,7 +15,7 @@ struct RollView: View {
                         .font(.system(.caption, design: .rounded))
                     Spacer()
                 }
-                .frame(height: 30)
+                .frame(height: 25)
 
                 DicePicker(
                     selectedDiceCount: viewStore.binding(
@@ -27,6 +27,7 @@ struct RollView: View {
                         send: AppAction.changeDie
                     )
                 )
+                .frame(height: 50)
 
                 RollButton(
                     result: viewStore.rollResult,
