@@ -47,7 +47,7 @@ struct ContentView_Previews: PreviewProvider {
                 initialState: AppState(),
                 reducer: appReducer,
                 environment: AppEnvironment(
-                    random: { _ in 4 },
+                    random: { range in range.upperBound },
                     device: WKInterfaceDevice.current
                 )
             )
