@@ -45,15 +45,19 @@ class InitiativeTests: XCTestCase {
             reducer: appReducer,
             environment: AppEnvironment(
                 random: { _ in 4 },
-                device: { fatalError() }
+                device: { self.device }
             )
         )
 
         store.assert(
             .send(.roll) {
                 $0.rollResult = .roll(4, .normal)
+            },
+            .do {
+                XCTAssertEqual(self.device.lastPlayedHaptic, .click)
             }
         )
+
     }
 
     func testCriticalFailureRoll() {
@@ -69,10 +73,11 @@ class InitiativeTests: XCTestCase {
         store.assert(
             .send(.roll) {
                 $0.rollResult = .roll(1, .criticalFailure)
+            },
+            .do {
+                XCTAssertEqual(self.device.lastPlayedHaptic, .failure)
             }
         )
-
-        XCTAssertEqual(self.device.lastPlayedHaptic, .failure)
     }
 
     func testCriticalSuccessRoll() {
@@ -88,10 +93,12 @@ class InitiativeTests: XCTestCase {
         store.assert(
             .send(.roll) {
                 $0.rollResult = .roll(20, .criticalSuccess)
+            },
+            .do {
+                XCTAssertEqual(self.device.lastPlayedHaptic, .success)
             }
         )
 
-        XCTAssertEqual(self.device.lastPlayedHaptic, .success)
     }
 
     func testChangeDieAndRollSuccess() {
@@ -113,9 +120,10 @@ class InitiativeTests: XCTestCase {
             },
             .send(.roll) {
                 $0.rollResult = .roll(24, .criticalSuccess)
+            },
+            .do {
+                XCTAssertEqual(self.device.lastPlayedHaptic, .success)
             }
         )
-
-        XCTAssertEqual(self.device.lastPlayedHaptic, .success)
     }
 }

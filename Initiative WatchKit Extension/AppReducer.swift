@@ -26,6 +26,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
             environment.device().play(.failure)
         } else {
             type = .normal
+            environment.device().play(.click)
         }
 
         state.rollResult = .roll(rollResult, type)
