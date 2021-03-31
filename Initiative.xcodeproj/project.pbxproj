@@ -17,6 +17,7 @@
 		3966A19424A679090021525E /* DicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A19324A679090021525E /* DicePicker.swift */; };
 		3966A19624A67A4A0021525E /* RollButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A19524A67A4A0021525E /* RollButton.swift */; };
 		39B05C29261444C00032426B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 39B05C28261444C00032426B /* ComposableArchitecture */; };
+		39B05C39261450290032426B /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B05C38261450290032426B /* SFSymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		3966A18524A677B40021525E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3966A19324A679090021525E /* DicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicePicker.swift; sourceTree = "<group>"; };
 		3966A19524A67A4A0021525E /* RollButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollButton.swift; sourceTree = "<group>"; };
+		39B05C38261450290032426B /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				3966A17C24A677B40021525E /* ContentView.swift */,
 				3966A19324A679090021525E /* DicePicker.swift */,
 				3966A19524A67A4A0021525E /* RollButton.swift */,
+				39B05C38261450290032426B /* SFSymbol.swift */,
 				3966A18024A677B40021525E /* Assets.xcassets */,
 				3966A18524A677B40021525E /* Info.plist */,
 				3966A18224A677B40021525E /* Preview Content */,
@@ -283,6 +286,7 @@
 			files = (
 				3966A19624A67A4A0021525E /* RollButton.swift in Sources */,
 				3966A17D24A677B40021525E /* ContentView.swift in Sources */,
+				39B05C39261450290032426B /* SFSymbol.swift in Sources */,
 				3966A19424A679090021525E /* DicePicker.swift in Sources */,
 				3966A17F24A677B40021525E /* InitiativeApp.swift in Sources */,
 			);

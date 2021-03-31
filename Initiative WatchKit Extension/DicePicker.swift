@@ -7,7 +7,7 @@ struct DicePicker: View {
     let dice = [2, 4, 6, 8, 12, 20, 100]
 
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             Picker("", selection: $selectedDiceCount) {
                 ForEach(1...20, id: \.self) { count in
                     Text(String(count))

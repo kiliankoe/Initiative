@@ -1,88 +1,32 @@
 import SwiftUI
-
-enum RollResult {
-    case unrolled
-    case roll(Int)
-}
-
-enum RollType {
-    case criticalFailure
-    case normal
-    case criticalSuccess
-}
+import ComposableArchitecture
 
 struct RollButton: View {
-    var selectedDiceCount: Int
-    var selectedDie: Int
+    let result: RollResult
+    let rollAction: () -> Void
 
-    @State var result: RollResult = .unrolled
-    @State var type: RollType = .normal
-
-    var stateIcon: Image {
-        switch type {
-        case .normal:
-            return Image(systemName: "arrow.triangle.2.circlepath")
-        case .criticalFailure:
-            return Image(systemName: "xmark.circle")
-        case .criticalSuccess:
-            return Image(systemName: "checkmark.circle")
-        }
-    }
-
-    var backgroundColor: Color {
-        switch type {
-        case .normal:
-            return .black
-        case .criticalSuccess:
-            return .green
-        case .criticalFailure:
-            return .red
-        }
-    }
-
-    var foregroundColor: Color {
-        switch type {
-        case .normal:
-            return .white
-        default:
-            return .black
-        }
+    init(result: RollResult, rollAction: @escaping () -> Void = {}) {
+        self.result = result
+        self.rollAction = rollAction
     }
 
     var body: some View {
         Button {
-            var rollResult = 0
-            for _ in (1...selectedDiceCount) {
-                rollResult += Int.random(in: 1...selectedDie)
-            }
-            self.result = .roll(rollResult)
-
-            let max = selectedDiceCount * selectedDie
-            let min = selectedDiceCount
-
-            if rollResult == max {
-                type = .criticalSuccess
-                WKInterfaceDevice.current().play(.success)
-            } else if rollResult == min {
-                type = .criticalFailure
-                WKInterfaceDevice.current().play(.failure)
-            } else {
-                type = .normal
-            }
+            rollAction()
         } label: {
             switch result {
             case .unrolled:
                 Text("Roll!")
-            case .roll(let roll):
+            case .roll(let roll, let type):
                 HStack {
-                    stateIcon
+                    type.symbol
                     Text(String(roll))
                 }
             }
         }
         .font(.system(.headline, design: .rounded))
-        .background(backgroundColor)
-        .foregroundColor(foregroundColor)
+        .background(result.buttonBackgroundColor)
+        .foregroundColor(result.buttonForegroundColor)
         .cornerRadius(20)
     }
 }
@@ -90,21 +34,58 @@ struct RollButton: View {
 struct RollButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RollButton(
-                selectedDiceCount: 1,
-                selectedDie: 20)
-            RollButton(
-                selectedDiceCount: 1,
-                selectedDie: 20,
-                result: .roll(1),
-                type: .criticalFailure)
-            RollButton(
-                selectedDiceCount: 1,
-                selectedDie: 20,
-                result: .roll(20),
-                type: .criticalSuccess)
+            RollButton(result: .unrolled)
+            RollButton(result: .roll(1, .criticalFailure))
+            RollButton(result: .roll(10, .normal))
+            RollButton(result: .roll(20, .criticalSuccess))
         }
         .padding()
-//        .previewLayout(.sizeThatFits)
+        .previewLayout(.sizeThatFits)
+    }
+}
+
+// MARK: Private Helpers
+
+private extension RollType {
+    var symbol: some View {
+        switch self {
+        case .normal:
+            return SFSymbol.reroll
+        case .criticalFailure:
+            return SFSymbol.criticalFail
+        case .criticalSuccess:
+            return SFSymbol.criticalSuccess
+        }
+    }
+
+    var buttonForegroundColor: Color {
+        switch self {
+        case .normal:
+            return .white
+        default:
+            return .black
+        }
+    }
+}
+
+private extension RollResult {
+    var buttonBackgroundColor: Color {
+        switch self {
+        case .roll(_, .criticalFailure):
+            return .red
+        case .roll(_, .criticalSuccess):
+            return .green
+        default:
+            return .black
+        }
+    }
+
+    var buttonForegroundColor: Color {
+        switch self {
+        case .unrolled, .roll(_, .normal):
+            return .white
+        default:
+            return .black
+        }
     }
 }

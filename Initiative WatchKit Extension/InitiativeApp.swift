@@ -10,7 +10,9 @@ struct InitiativeApp: App {
                     store: Store(
                         initialState: AppState(),
                         reducer: appReducer,
-                        environment: AppEnvironment()
+                        environment: AppEnvironment(
+                            device: WKInterfaceDevice.current
+                        )
                     )
                 )
             }
