@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		3966A18424A677B40021525E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3966A18324A677B40021525E /* Preview Assets.xcassets */; };
 		3966A19424A679090021525E /* DicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A19324A679090021525E /* DicePicker.swift */; };
 		3966A19624A67A4A0021525E /* RollButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A19524A67A4A0021525E /* RollButton.swift */; };
+		39B05C29261444C00032426B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 39B05C28261444C00032426B /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B05C29261444C00032426B /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +94,7 @@
 				3966A16F24A677B20021525E /* Initiative WatchKit App */,
 				3966A17B24A677B40021525E /* Initiative WatchKit Extension */,
 				3966A16824A677B20021525E /* Products */,
+				39B05C27261444C00032426B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +139,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		39B05C27261444C00032426B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +162,9 @@
 				3966A16E24A677B20021525E /* PBXTargetDependency */,
 			);
 			name = Initiative;
+			packageProductDependencies = (
+				39B05C26261444740032426B /* ComposableArchitecture */,
+			);
 			productName = Initiative;
 			productReference = 3966A16724A677B20021525E /* Initiative.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
@@ -186,6 +199,9 @@
 			dependencies = (
 			);
 			name = "Initiative WatchKit Extension";
+			packageProductDependencies = (
+				39B05C28261444C00032426B /* ComposableArchitecture */,
+			);
 			productName = "Initiative WatchKit Extension";
 			productReference = 3966A17724A677B40021525E /* Initiative WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -219,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 3966A16024A677B20021525E;
+			packageReferences = (
+				39B05C25261444740032426B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 3966A16824A677B20021525E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -563,6 +582,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		39B05C25261444740032426B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39B05C26261444740032426B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39B05C25261444740032426B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		39B05C28261444C00032426B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39B05C25261444740032426B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3966A16124A677B20021525E /* Project object */;
 }

@@ -1,3 +1,4 @@
+import ComposableArchitecture
 import SwiftUI
 
 @main
@@ -5,7 +6,13 @@ struct InitiativeApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView(
+                    store: Store(
+                        initialState: AppState(),
+                        reducer: appReducer,
+                        environment: AppEnvironment()
+                    )
+                )
             }
         }
     }

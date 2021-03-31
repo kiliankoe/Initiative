@@ -12,8 +12,8 @@ enum RollType {
 }
 
 struct RollButton: View {
-    @Binding var selectedDiceCount: Int
-    @Binding var selectedDie: Int
+    var selectedDiceCount: Int
+    var selectedDie: Int
 
     @State var result: RollResult = .unrolled
     @State var type: RollType = .normal
@@ -91,16 +91,16 @@ struct RollButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             RollButton(
-                selectedDiceCount: .constant(1),
-                selectedDie: .constant(20))
+                selectedDiceCount: 1,
+                selectedDie: 20)
             RollButton(
-                selectedDiceCount: .constant(1),
-                selectedDie: .constant(20),
+                selectedDiceCount: 1,
+                selectedDie: 20,
                 result: .roll(1),
                 type: .criticalFailure)
             RollButton(
-                selectedDiceCount: .constant(1),
-                selectedDie: .constant(20),
+                selectedDiceCount: 1,
+                selectedDie: 20,
                 result: .roll(20),
                 type: .criticalSuccess)
         }
