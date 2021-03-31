@@ -6,11 +6,12 @@ struct InitiativeApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView(
+                RollView(
                     store: Store(
                         initialState: AppState(),
                         reducer: appReducer,
                         environment: AppEnvironment(
+                            random: Int.random,
                             device: WKInterfaceDevice.current
                         )
                     )

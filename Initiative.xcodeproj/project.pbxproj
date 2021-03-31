@@ -7,16 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393407F02614586A0045B901 /* RollResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393407EF2614586A0045B901 /* RollResult.swift */; };
+		393407F2261458790045B901 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393407F1261458790045B901 /* AppState.swift */; };
+		393407F4261458860045B901 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393407F3261458860045B901 /* AppAction.swift */; };
+		393407F6261458960045B901 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393407F5261458950045B901 /* AppEnvironment.swift */; };
+		393407F8261458A60045B901 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393407F7261458A60045B901 /* AppReducer.swift */; };
+		393407FA261458BC0045B901 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393407F9261458BC0045B901 /* Device.swift */; };
+		393407FC261459E80045B901 /* MockDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393407FB261459E80045B901 /* MockDevice.swift */; };
 		3966A16C24A677B20021525E /* Initiative WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3966A16B24A677B20021525E /* Initiative WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3966A17124A677B30021525E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3966A17024A677B30021525E /* Assets.xcassets */; };
 		3966A17824A677B40021525E /* Initiative WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3966A17724A677B40021525E /* Initiative WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3966A17D24A677B40021525E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A17C24A677B40021525E /* ContentView.swift */; };
+		3966A17D24A677B40021525E /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A17C24A677B40021525E /* RollView.swift */; };
 		3966A17F24A677B40021525E /* InitiativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A17E24A677B40021525E /* InitiativeApp.swift */; };
 		3966A18124A677B40021525E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3966A18024A677B40021525E /* Assets.xcassets */; };
 		3966A18424A677B40021525E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3966A18324A677B40021525E /* Preview Assets.xcassets */; };
 		3966A19424A679090021525E /* DicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A19324A679090021525E /* DicePicker.swift */; };
 		3966A19624A67A4A0021525E /* RollButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966A19524A67A4A0021525E /* RollButton.swift */; };
 		39B05C29261444C00032426B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 39B05C28261444C00032426B /* ComposableArchitecture */; };
+		39B05C3126144C240032426B /* InitiativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B05C3026144C240032426B /* InitiativeTests.swift */; };
 		39B05C39261450290032426B /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B05C38261450290032426B /* SFSymbol.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +37,13 @@
 			remoteInfo = "Initiative WatchKit App";
 		};
 		3966A17924A677B40021525E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3966A16124A677B20021525E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3966A17624A677B40021525E;
+			remoteInfo = "Initiative WatchKit Extension";
+		};
+		39B05C3326144C240032426B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3966A16124A677B20021525E /* Project object */;
 			proxyType = 1;
@@ -63,18 +78,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		393407EF2614586A0045B901 /* RollResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollResult.swift; sourceTree = "<group>"; };
+		393407F1261458790045B901 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		393407F3261458860045B901 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		393407F5261458950045B901 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		393407F7261458A60045B901 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		393407F9261458BC0045B901 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		393407FB261459E80045B901 /* MockDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDevice.swift; sourceTree = "<group>"; };
 		3966A16724A677B20021525E /* Initiative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Initiative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3966A16B24A677B20021525E /* Initiative WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Initiative WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3966A17024A677B30021525E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3966A17224A677B30021525E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3966A17724A677B40021525E /* Initiative WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Initiative WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3966A17C24A677B40021525E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3966A17C24A677B40021525E /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		3966A17E24A677B40021525E /* InitiativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeApp.swift; sourceTree = "<group>"; };
 		3966A18024A677B40021525E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3966A18324A677B40021525E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3966A18524A677B40021525E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3966A19324A679090021525E /* DicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicePicker.swift; sourceTree = "<group>"; };
 		3966A19524A67A4A0021525E /* RollButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollButton.swift; sourceTree = "<group>"; };
+		39B05C2E26144C240032426B /* InitiativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InitiativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B05C3026144C240032426B /* InitiativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeTests.swift; sourceTree = "<group>"; };
+		39B05C3226144C240032426B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B05C38261450290032426B /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +112,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		39B05C2B26144C240032426B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,6 +127,7 @@
 			children = (
 				3966A16F24A677B20021525E /* Initiative WatchKit App */,
 				3966A17B24A677B40021525E /* Initiative WatchKit Extension */,
+				39B05C2F26144C240032426B /* InitiativeTests */,
 				3966A16824A677B20021525E /* Products */,
 				39B05C27261444C00032426B /* Frameworks */,
 			);
@@ -106,6 +139,7 @@
 				3966A16724A677B20021525E /* Initiative.app */,
 				3966A16B24A677B20021525E /* Initiative WatchKit App.app */,
 				3966A17724A677B40021525E /* Initiative WatchKit Extension.appex */,
+				39B05C2E26144C240032426B /* InitiativeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,10 +157,16 @@
 			isa = PBXGroup;
 			children = (
 				3966A17E24A677B40021525E /* InitiativeApp.swift */,
-				3966A17C24A677B40021525E /* ContentView.swift */,
+				3966A17C24A677B40021525E /* RollView.swift */,
 				3966A19324A679090021525E /* DicePicker.swift */,
+				393407EF2614586A0045B901 /* RollResult.swift */,
+				393407F1261458790045B901 /* AppState.swift */,
+				393407F3261458860045B901 /* AppAction.swift */,
+				393407F5261458950045B901 /* AppEnvironment.swift */,
+				393407F7261458A60045B901 /* AppReducer.swift */,
 				3966A19524A67A4A0021525E /* RollButton.swift */,
 				39B05C38261450290032426B /* SFSymbol.swift */,
+				393407F9261458BC0045B901 /* Device.swift */,
 				3966A18024A677B40021525E /* Assets.xcassets */,
 				3966A18524A677B40021525E /* Info.plist */,
 				3966A18224A677B40021525E /* Preview Content */,
@@ -147,6 +187,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39B05C2F26144C240032426B /* InitiativeTests */ = {
+			isa = PBXGroup;
+			children = (
+				39B05C3026144C240032426B /* InitiativeTests.swift */,
+				393407FB261459E80045B901 /* MockDevice.swift */,
+				39B05C3226144C240032426B /* Info.plist */,
+			);
+			path = InitiativeTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,13 +259,31 @@
 			productReference = 3966A17724A677B40021525E /* Initiative WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		39B05C2D26144C240032426B /* InitiativeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39B05C3526144C240032426B /* Build configuration list for PBXNativeTarget "InitiativeTests" */;
+			buildPhases = (
+				39B05C2A26144C240032426B /* Sources */,
+				39B05C2B26144C240032426B /* Frameworks */,
+				39B05C2C26144C240032426B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39B05C3426144C240032426B /* PBXTargetDependency */,
+			);
+			name = InitiativeTests;
+			productName = InitiativeTests;
+			productReference = 39B05C2E26144C240032426B /* InitiativeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3966A16124A677B20021525E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					3966A16624A677B20021525E = {
@@ -226,6 +294,10 @@
 					};
 					3966A17624A677B40021525E = {
 						CreatedOnToolsVersion = 12.0;
+					};
+					39B05C2D26144C240032426B = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 3966A17624A677B40021525E;
 					};
 				};
 			};
@@ -248,6 +320,7 @@
 				3966A16624A677B20021525E /* Initiative */,
 				3966A16A24A677B20021525E /* Initiative WatchKit App */,
 				3966A17624A677B40021525E /* Initiative WatchKit Extension */,
+				39B05C2D26144C240032426B /* InitiativeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,6 +350,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		39B05C2C26144C240032426B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -284,11 +364,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393407FA261458BC0045B901 /* Device.swift in Sources */,
 				3966A19624A67A4A0021525E /* RollButton.swift in Sources */,
-				3966A17D24A677B40021525E /* ContentView.swift in Sources */,
+				393407F4261458860045B901 /* AppAction.swift in Sources */,
+				393407F02614586A0045B901 /* RollResult.swift in Sources */,
+				393407F2261458790045B901 /* AppState.swift in Sources */,
+				393407F8261458A60045B901 /* AppReducer.swift in Sources */,
+				3966A17D24A677B40021525E /* RollView.swift in Sources */,
 				39B05C39261450290032426B /* SFSymbol.swift in Sources */,
 				3966A19424A679090021525E /* DicePicker.swift in Sources */,
 				3966A17F24A677B40021525E /* InitiativeApp.swift in Sources */,
+				393407F6261458960045B901 /* AppEnvironment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39B05C2A26144C240032426B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39B05C3126144C240032426B /* InitiativeTests.swift in Sources */,
+				393407FC261459E80045B901 /* MockDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +399,11 @@
 			isa = PBXTargetDependency;
 			target = 3966A17624A677B40021525E /* Initiative WatchKit Extension */;
 			targetProxy = 3966A17924A677B40021525E /* PBXContainerItemProxy */;
+		};
+		39B05C3426144C240032426B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3966A17624A677B40021525E /* Initiative WatchKit Extension */;
+			targetProxy = 39B05C3326144C240032426B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -546,6 +646,50 @@
 			};
 			name = Release;
 		};
+		39B05C3626144C240032426B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HU85FER47E;
+				INFOPLIST_FILE = InitiativeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.InitiativeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Initiative WatchKit Extension.appex/Initiative WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		39B05C3726144C240032426B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HU85FER47E;
+				INFOPLIST_FILE = InitiativeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.InitiativeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Initiative WatchKit Extension.appex/Initiative WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +725,15 @@
 			buildConfigurations = (
 				3966A19124A677B40021525E /* Debug */,
 				3966A19224A677B40021525E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39B05C3526144C240032426B /* Build configuration list for PBXNativeTarget "InitiativeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39B05C3626144C240032426B /* Debug */,
+				39B05C3726144C240032426B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
